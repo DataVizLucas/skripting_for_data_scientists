@@ -1,1 +1,1 @@
-# skripting_for_data_scientists
+# Skripting for Data Scientists Course
