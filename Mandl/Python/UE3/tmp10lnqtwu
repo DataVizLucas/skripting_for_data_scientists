@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+"""
+====================================================================
+Author:        Lucas Mandl
+Company:       FH Joanneum
+Date:          10.10.2020
+Description:   Implementation of laboratory session 3 - P.4 sissor, rock, paper
+====================================================================
+"""
+# TODO: check for errors
+
+#import numpy as np
+import random as rand
+
+# clear command line and workspace:
+try:
+    from IPython import get_ipython
+    get_ipython().magic('clear')
+    get_ipython().magic('reset -f')
+except:
+    pass
+
+def si_ro_pa(arg):
+    x = rand.randint(0,2)
+    comp = ""
+    if x == 0:
+        comp = "sissor"
+    elif x == 1:
+        comp = "rock"
+    elif x == 2:
+        comp = "paper"
+        
+    print("\n Computer said: ", comp, "\n\n")
+    
+    if arg == comp:
+        return True
+    else:
+        return False
+    
+var = True
+i = 0
+while var:
+    print("Welcome to Rock, Paper, Sissors \n")
+    user_input = input("Write your input (rock, paper or sissor) to play or prexx <q> to quit \n")
+    game_flag = 0
+    if user_input == "q" or user_input == "Q":
+        print("Game stopped")
+        break;
+    elif user_input == "sissor" or user_input == "rock" or user_input == "paper":
+        game_flag = si_ro_pa(user_input)
+    else:
+        print("\n \n Error wrong input \n\n")
+        get_ipython().magic('clear')
+        
+    if game_flag:
+        user_input = input("Congrats you won! Play again? (Y/N)")
+        get_ipython().magic('clear')
+    else:
+        user_input = input("You lose. Play again? (Y/N)")
+        get_ipython().magic('clear')
+        
+    if user_input == "n" or user_input == "N":
+        var = False
+    

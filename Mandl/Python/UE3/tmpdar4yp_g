@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+"""
+====================================================================
+Author:        Lucas Mandl
+Company:       FH Joanneum
+Date:          10.10.2020
+Description:   Implementation of laboratory session 3 - P.2 numpy
+====================================================================
+"""
+
+import numpy as np
+import random as rand
+
+# clear command line and workspace:
+try:
+    from IPython import get_ipython
+    get_ipython().magic('clear')
+    get_ipython().magic('reset -f')
+except:
+    pass
+
+def is_in_circle(x,y):
+    if x**2+y**2 < 1:
+        return True
+    else:
+        return False
+    
+def simulate(n):
+    x_rand = rand.uniform(-1, 1)
+    y_rand = rand.uniform(-1, 1)
+    return is_in_circle(x_rand, y_rand)
+
+
+i = 0
+pi_4 = np.zeros(3)
+for n in [1000,10000,100000]:
+    n_tuple = tuple(range(1,n+1))
+    sim = list(map(simulate, n_tuple))
+    
+    pi_4[i] = 0
+    for i in range(len(sim)):
+        if sim[i] == True:
+            pi_4[i] += 1
+    
+    pi_4[i] = pi_4*4/n
+    i += 1
+
+#pi_approx = map()
