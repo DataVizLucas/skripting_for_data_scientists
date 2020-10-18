@@ -25,4 +25,5 @@ a[5] <- 5.55
 #f:
 a[c(1,3,8)] = c(0,0,0)  # replace the 1st, 3rd and 8th element in one line
 # g:
-a[10] = 'Hello'     # the int vector is converted to a string vector --> all elements turn to char 
+a[10] = 'Hello'     # the int vector is converted to a string vector --> all elements turn to char  
+

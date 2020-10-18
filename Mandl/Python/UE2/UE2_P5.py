@@ -26,8 +26,8 @@ def integrate_f(N,a,b,f):
     h = (b-a)/N
     I = 0
     for i in range(N):
-        xi = a + (i-1)*h
-        xi1 = a + i*h
+        xi = a + (i-1)*h  # x_i
+        xi1 = a + i*h     # x_(i+1)
         if f == "sin":
             I = I + h/2*(math.sin(xi)*math.sin(xi) + math.sin(xi1)*math.sin(xi1))
         elif f == "x":
@@ -46,9 +46,9 @@ x_int[1] = integrate_f(1000, 2, 5, "x")
 x_int[2] = integrate_f(10000, 2, 5, "x")
 
 # analytic solution:
-# sin:
+# sin^2(x):
 a = 2*math.pi
-I_sin = 1/2*(a-2*math.sin(a)*math.cos(a))
+I_sin = 1/2*(a-2*math.sin(a)*math.cos(a))-(1/2*(0-2*math.sin(0)*math.cos(0)))
 
 # x^2
 a = 2

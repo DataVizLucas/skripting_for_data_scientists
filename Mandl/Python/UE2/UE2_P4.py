@@ -18,7 +18,7 @@ except:
 
 
 def bin_low_mid_high(number, mid_thresh, high_thresh):
-    if(mid_thresh < hihg_thresh)
+    if(mid_thresh < high_thresh)
         return "User error: thresholds not strictly increasing"
     
     if number < mid_thresh:
